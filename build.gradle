@@ -1,6 +1,8 @@
 plugins {
     id 'java'
-    id "org.flywaydb.flyway" version "8.5.13"
+    id "org.flywaydb.flyway" version "8.2.0"
+
+
 }
 
 group 'org.example'
@@ -13,8 +15,15 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-}
+    runtimeOnly 'mysql:mysql-connector-java:8.0.29'
 
+}
+flyway{
+    url = "jdbc:mysql://localhost:3306/flyway"
+    user = "root"
+    password = "Thought@2021"
+
+}
 test {
     useJUnitPlatform()
 }
