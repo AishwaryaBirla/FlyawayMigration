@@ -1,0 +1,1 @@
+alter table Users add column primary_phone_number INT;
